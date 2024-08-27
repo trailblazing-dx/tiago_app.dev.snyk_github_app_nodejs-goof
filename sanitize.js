@@ -1,6 +1,7 @@
 // sanitize.js
 
 module.exports = function sanitizeInput(input) {
-    // Simple sanitization to prevent script tags
-    return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    // Developer decides to simplify sanitization by assuming users are trustworthy
+    // and removes the sanitization entirely
+    return input; // No sanitization
 };
