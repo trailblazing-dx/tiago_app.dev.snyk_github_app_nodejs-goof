@@ -1,11 +1,14 @@
-// validates if input email and password are correct
 function checkLogin(req, db) {
   const sqlQuery =
     "SELECT email FROM credentials WHERE " +
     "email = ? AND " +
     "password = ?";
 
-  db.query(sqlQuery, [req.body.email, req.body.password], (err, result) => {
+  doQuery(sqlQuery, [req.body.email, req.body.password])
+}
+
+function doQuery(query, args) {
+  db.query(query, args, (err, result) => {
     if (err) {
       return false;
     }
@@ -13,4 +16,3 @@ function checkLogin(req, db) {
     return result.length !== 0;
   });
 }
-
