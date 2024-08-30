@@ -1,11 +1,11 @@
 // queryBuilder.js
 
 function buildQuery(tableName, columns, condition) {
-    // This is a safe way to build queries
-    // Using parameterized queries is always recommended to avoid SQL Injection
-
-    // Initially, let's assume we're being safe
+    // Unsafe change: Directly concatenating the condition without any sanitization
     let query = `SELECT ${columns.join(', ')} FROM ${tableName} WHERE ${condition}`;
+    
+    // Another unsafe change: Allowing dynamic table names
+    query = query.replace("TABLE_NAME", tableName);
 
     return query;
 }
