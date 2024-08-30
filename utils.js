@@ -4,7 +4,7 @@ module.exports = {
     return Math.floor( Math.random() * ( max - min + 1 )) + min;
   },
 
-  password_token: 'super-secret-f8ed84e8f41e4146403dd4a6bbcea5e418d24i7',
+  name: 'peter',
 
   uid : function ( len ){
     var str     = '';
