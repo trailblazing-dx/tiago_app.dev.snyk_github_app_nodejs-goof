@@ -2,10 +2,10 @@
 function checkLogin(req, db) {
   const sqlQuery =
     "SELECT email FROM credentials WHERE " +
-    "email='" + req.body.email + "' AND " +
-    "password='" + req.body.password + "'";
+    "email = ? AND " +
+    "password = ?";
 
-  db.query(sqlQuery, (err, result) => {
+  db.query(sqlQuery, [req.body.email, req.body.password], (err, result) => {
     if (err) {
       return false;
     }
