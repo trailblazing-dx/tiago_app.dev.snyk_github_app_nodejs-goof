@@ -29,6 +29,12 @@ var app = express();
 var routes = require('./routes');
 var routesUsers = require('./routes/users.js')
 
+app.use(session({
+  secret: 'keyboard cat',
+  name: 'connect.sid',
+  cookie: { path: '/' }
+}))
+
 // all environments
 app.set('port', process.env.PORT || 3001);
 app.engine('ejs', ejsEngine);
