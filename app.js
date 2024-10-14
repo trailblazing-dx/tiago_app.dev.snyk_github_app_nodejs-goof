@@ -44,6 +44,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
+const a = "vuln a"
+
 // Routes
 app.use(routes.current_user);
 app.get('/', routes.index);
@@ -64,6 +66,8 @@ app.put('/chat', routes.chat.add);
 app.delete('/chat', routes.chat.delete);
 app.use('/users', routesUsers)
 
+const b = "vuln b"
+
 // Static
 app.use(st({ path: './public', url: '/public' }));
 
@@ -75,6 +79,8 @@ app.locals.marked = marked;
 if (app.get('env') == 'development') {
   app.use(errorHandler());
 }
+
+const c = "vuln c"
 
 var token = 'SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9';
 console.log('token: ' + token);
