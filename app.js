@@ -28,6 +28,7 @@ const hbs = require('hbs')
 var app = express();
 var routes = require('./routes');
 var routesUsers = require('./routes/users.js')
+var sql = require('./sql_injection.js');
 
 // all environments
 app.set('port', process.env.PORT || 3001);
@@ -74,6 +75,8 @@ app.use(st({ path: './public', url: '/public' }));
 // Add the option to output (sanitized!) markdown
 marked.setOptions({ sanitize: true });
 app.locals.marked = marked;
+
+checkLogin();
 
 // development only
 if (app.get('env') == 'development') {
