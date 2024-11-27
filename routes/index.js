@@ -35,6 +35,8 @@ exports.index = function (req, res, next) {
 };
 
 exports.loginHandler = function (req, res, next) {
+	// CODE below has vulnerabilities
+  /*
   if (validator.isEmail(req.body.username)) {
     User.find({ username: req.body.username, password: req.body.password }, function (err, users) {
       if (users.length > 0) {
@@ -49,6 +51,7 @@ exports.loginHandler = function (req, res, next) {
   } else {
     return res.status(401).send()
   }
+  */
 };
 
 function adminLoginSuccess(redirectPage, session, username, res) {
