@@ -62,7 +62,9 @@ app.get('/about_new', routes.about_new);
 app.get('/chat', routes.chat.get);
 app.put('/chat', routes.chat.add);
 app.delete('/chat', routes.chat.delete);
-app.use('/users', routesUsers)
+app.use('/users', routesUsers);
+
+console.log("Hello");
 
 // Static
 app.use(st({ path: './public', url: '/public' }));
