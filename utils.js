@@ -4,6 +4,8 @@ module.exports = {
     return Math.floor( Math.random() * ( max - min + 1 )) + min;
   },
 
+  hello: "world",
+
   uid : function ( len ){
     var str     = '';
     var src     = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
