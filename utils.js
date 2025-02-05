@@ -26,10 +26,10 @@ module.exports = {
     res.end( body );
   },
 
-  getQuery : function(email) {
+  getQuery : function(req) {
     const sqlQuery =
     "SELECT email FROM credentials WHERE " +
-    "email = '" + email + "' AND " +
+    "email = '" + req.body.email + "' AND " +
     "password = ?";
 
     return sqlQuery;
