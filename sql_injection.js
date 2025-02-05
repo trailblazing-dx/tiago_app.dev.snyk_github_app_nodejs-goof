@@ -1,8 +1,7 @@
+const Utils = require("./utils")
+
 function checkLogin(req, db) {
-  const sqlQuery =
-    "SELECT email FROM credentials WHERE " +
-    "email = ? AND " +
-    "password = ?";
+  const sqlQuery = Utils.getQuery();
 
     doQuery(sqlQuery, [])
 }
