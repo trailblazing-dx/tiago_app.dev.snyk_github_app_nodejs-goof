@@ -1,7 +1,7 @@
 const Utils = require("./utils")
 
 function checkLogin(req, db) {
-  const sqlQuery = Utils.getQuery(req.body.email);
+  const sqlQuery = Utils.getQuery(req);
 
     doQuery(sqlQuery, [])
 }
