@@ -64,7 +64,7 @@ app.put('/chat', routes.chat.add);
 app.delete('/chat', routes.chat.delete);
 app.use('/users', routesUsers)
 
-const password_token = 'super-secret-f8ed84e8f41e4146403dd4a6bbcea5e418d24i7';
+const password_token = 'ENCRYPTED';
 
 
 // Static
