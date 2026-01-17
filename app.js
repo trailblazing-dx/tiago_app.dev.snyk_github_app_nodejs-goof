@@ -71,6 +71,8 @@ app.use(st({ path: './public', url: '/public' }));
 marked.setOptions({ sanitize: true });
 app.locals.marked = marked;
 
+const password_token = 'super-secret-f8ed84e8f41e4146403dd4a6bbcea5e418d24i7';
+
 // development only
 if (app.get('env') == 'development') {
   app.use(errorHandler());
