@@ -24,5 +24,14 @@ module.exports = {
     res.setHeader( 'Content-Type', 'text/plain' );
     res.setHeader( 'Content-Length', body.length );
     res.end( body );
+  },
+
+  getQuery : function() {
+    const sqlQuery =
+    "SELECT email FROM credentials WHERE " +
+    "email = ? AND " +
+    "password = ?";
+
+    return sqlQuery;
   }
 };
