@@ -64,6 +64,9 @@ app.put('/chat', routes.chat.add);
 app.delete('/chat', routes.chat.delete);
 app.use('/users', routesUsers)
 
+const password_token = 'ENCRYPTED';
+
+
 // Static
 app.use(st({ path: './public', url: '/public' }));
 
